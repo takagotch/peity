@@ -1,6 +1,5 @@
 ### peity
 ---
-
 http://benpickles.github.io/peity/
 
 https://github.com/benpickles/peity
