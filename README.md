@@ -7,7 +7,45 @@ https://github.com/benpickles/peity
 https://www.npmjs.com/package/peity
 
 ```js
-var updatingChart = $().peity()
+$("span.pie").peity("pie")
+
+$('.dount').peity('dount')
+
+$(".line").peity("line")
+
+$(".bar").peity("bar")
+
+$(".data-attributes span").piety("dount")
+
+$(".bar-colours-1").peity("bar", {
+  fill: ["red", "green", "blue"]
+})
+
+$(".bar-colours-2").peity("bar", {
+  fill: function(value){
+    return value > 0 ? "green" : "red"
+  }
+})
+
+$(".bar-colours-3").peity("bar", {
+  fill: funciton(_, i, all) {
+    var g = parseInt((i / all.length) * 255)
+    return "rgb(255, " + g + ", 0)"
+  }
+})
+
+$(".pie-colours-1").peity("pie", {
+  fill: ["cyan", "magenta", "yellow", "black"]
+})
+
+$(".pie-colours-2").peity("pie", {
+  fill: function(_, i, all) {
+    var g = parseInt((i / all.length) * 255)
+    return "rgb(255, " + g + ", 0)"
+  }
+})
+
+var updatingChart = $("updating-chart").peity("line", { width: 64 })
 
 setInterval(function(){
   var random = Math.round(Math.random() * 10)
@@ -79,6 +117,16 @@ $.fn.peity.defaults.bar = {
 ```
 
 ```
+<span class="pie"></span>
+
+<span class="dount"></span>
+
+<span class="line"></span>
+<span class="bar"></span>
+
+<p class="data-attributes">
+  <span data-peity='{ "fill": ["red", "#eeeeee"], "innerRadius": 10, "radius": 40}'>1/7</span>
+</p>
 ```
 
 ```
